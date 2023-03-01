@@ -1,8 +1,9 @@
 import discord
 import logging
+from discord.ext import commands
 
 
-class MyClient(discord.Client):
+class MyClient(discord.Bot):
     # Retrieve the logging object for the client.
     logger = logging.getLogger('discord.client')
 
@@ -28,6 +29,5 @@ intents.message_content = True
 
 # Construct an instance of the Client with the given intents.
 client = MyClient(intents=intents)
-
 # Request console input for the bot token and pass it to the client for it to initialize
 client.run(input('Enter a bot token: '))
